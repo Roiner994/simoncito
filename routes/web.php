@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'administrador'], function () {
+    Route::resource('usuario','UsuarioController');
+    Route::resource('empleado','EmpleadoController');
+});

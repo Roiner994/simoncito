@@ -10,7 +10,7 @@ class Persona extends Model
     protected $primarykey = 'cedula';
 
     protected $fillable = [
-    'nombre','segundo_nombre','apellido','segundo_apellido','lugar_nacimiento','fecha_nacimiento','edad','ocupacion','direccion'
+    'cedula','nombre','segundo_nombre','apellido','segundo_apellido','lugar_nacimiento','fecha_nacimiento','edad','ocupacion','direccion'
     ];
 
      public function empleado()

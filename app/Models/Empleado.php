@@ -10,7 +10,7 @@ class Empleado extends Model
     protected $primarykey = 'cedula';
 
     protected $fillable = [
-    'estado'
+    'cedula','estado'
     ];
 
     public function persona()
