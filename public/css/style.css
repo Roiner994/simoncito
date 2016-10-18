@@ -1,0 +1,77 @@
+
+.scroll{
+	overflow: auto;
+	height: 550px;
+}
+
+/*.buscar {
+	margin-top: 125px;
+}*/
+
+.buscar div{
+	width: 250px;
+	text-align: right;
+}
+
+.tam-slide{
+	width: 800px;
+	height: 200px;
+	background-color: green;
+}
+
+.tam-imagen{
+	height: 300px;
+	width: 100%;
+}
+
+.tam-imagen2{
+	height: 140px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.margen{
+	margin-left: 20px;
+}
+
+.margen2{
+	margin-right: 5px;
+}
+
+.prueba{
+	background-color:#079e44;
+	color:#FFFFFF; 
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.nav a{
+	color: #079e44;
+}
+
+.bajar{
+	margin-top: 21px;
+}
+
+.lista > a{
+	color: #079e44;
+}
+
+.lista li a{
+	color: black;
+}
+
+.cant{
+	width: 120px;
+}
+
+.cant2{
+	width: 180px;
+}
+.separar{
+	margin-right: 10px;
+}
