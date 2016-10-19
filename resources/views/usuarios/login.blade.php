@@ -15,51 +15,53 @@
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/bootstrap-social.css')!!}
     {!!Html::style('css/navbar-fixed-top.css')!!}
-    {!!Html::style('css/style.css')!!}
+    {!!Html::style('css/login.css')!!}
     {!!Html::style('css/font-awesome.css')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
 </head>
 <body>
-	<div class="container">
-		@include('partials.message')
-		<div class="page-header">
-			<h1 class="text-info">Ingresa a nuestro sitio </h1>
-		</div>
-		@include('partials.message')
-		<div class="col-md-6 pull-center">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					{!! Form::open(['route'=>'admin.auth.login','method' => 'POST']) !!}		
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Sistema Simoncito</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+	            <div class="error-center">
+	            	@include('mensajes.mensaje');
+	            </div>
+				<div class="main-login main-center">
+					{!! Form::open(['route'=>'administrador.auth.login','method' => 'POST'] ) !!}	
 						<div class="form-group">
 							{!! Form::label('email', 'Correo Electronico') !!}
-							{!! Form::email('email',null,['class'=> 'form-control', 'placeholder' => 'ejemplo@gmail.com', 'required']) !!}
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									{!! Form::email('email',null,['class'=> 'form-control', 'placeholder' => 'ejemplo@gmail.com', 'required']) !!}
+								</div>
+							</div>
 						</div>
+
 						<div class="form-group">
 							{!! Form::label('password', 'Contraseña') !!}
-							{!! Form::password('password',['class'=> 'form-control', 'placeholder' => '***********', 'required']) !!}
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									{!! Form::password('password',['class'=> 'form-control', 'placeholder' => '***********', 'required']) !!}
+								</div>
+							</div>
 						</div>
-						<div class="form-group">
-							<div class="form-group ">
-                            <div class="col-md-1 col-md-offset-4">
-                                <button type="submit" class="btn btn-info">
-                                    <i class="glyphicon glyphicon-log-in"></i> Ingresar
-                                </button>
-                            </div>
-	                        </div>
-	                        <div class="form-group">
-	                            <div class="col-md-1 col-md-offset-4">
-	                                <a href= {{ route('register.create')}} class="btn btn-danger">
-	                					<i class="fa fa-user-plus" aria-hidden="true"></i> Registrar
-	                				</a>
-	                                    
-	                            </div>
-	                        </div>
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button"> <i class="glyphicon glyphicon-log-in"></i> Ingresar</button>
 						</div>
 					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+
 </html>

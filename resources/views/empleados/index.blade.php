@@ -8,7 +8,6 @@
       <h1>Empleados <small>Actualizados hasta hoy</small></h1>
     </div>
     @include('mensajes.mensaje')
-    <div id="prueba">hola</div>
     <div class="row">
      <div class="col-md-8">
       <div class="panel panel-default">
@@ -35,26 +34,13 @@
             <td>{{ $empleado->apellido }}</td>
             <td>{{ $empleado->edad }}</td>
             <td>{{ $empleado->ocupacion}}</td>
-            <td><label id="estado">{{ $empleado->estado}}</label></td>
-
-            {{-- <td>
-              <label class="label label-primary">
-                {{ $users->type }}
-              </label>              
-              <label class="label label-success">
-                {{ $users->type }}
-              </label>
-              <label class="label label-warning">
-                {{ $users->type }}
-              </label>
-
-            </td> --}}
+            <td><label id="estados">{{ $empleado->estado}}</label></td>
             <td>
-              <a href=#{{-- "{{ route('admin.users.detail',$users->id )}}" --}} class="btn btn-primary glyphicon glyphicon-folder-open">
+              <a href="{{ route('administrador.empleado.detalle',$empleado->cedula )}}"  class="btn btn-primary glyphicon glyphicon-folder-open">
               </a>
-              <a href=#{{-- "{{ route('admin.users.edit',$users->id )}}" --}} class="btn btn-warning glyphicon glyphicon-pencil">
+              <a href= "{{ route('empleado.edit',$empleado->cedula )}}" class="btn btn-warning glyphicon glyphicon-pencil">
               </a>
-              <a href=#{{-- "{{ route('admin.users.show',$users->id )}}" --}} class="btn btn-danger glyphicon glyphicon-remove-circle"></a>
+              <a href= "{{ route('empleado.show',$empleado->cedula )}}" class="btn btn-danger glyphicon glyphicon-remove-circle"></a>
             </td>
           </tr>
           @endforeach

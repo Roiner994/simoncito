@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\User;
+use App\Models\Persona;
 
 class UsuarioController extends Controller
 {
+    public function getLogin(Request $request)
+    {
+        dd('hola');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        return view('usuarios.login');
     }
 
     /**
@@ -36,7 +42,12 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'cedula' => $request['cedula'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+        ]);
+        dd('se creo el usuario');
     }
 
     /**

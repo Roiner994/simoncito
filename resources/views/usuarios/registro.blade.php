@@ -27,38 +27,18 @@
         <div class="panel-heading">Registrar usuario</div>
         <div class="panel-body">
           {!! Form::open(['route' => 'usuario.store', 'method' => 'POST']) !!}         
-            <div>
-              <div class="form-group col-md-6">
-              {!! Form::label('name', 'Nombre') !!}
-              {!! Form::text('name',null,['class'=> 'form-control', 'placeholder' => 'Nombre', 'required']) !!}
-              </div>
-              <div class="form-group col-md-6">
-                {!! Form::label('last_name', 'Apellido') !!}
-                {!! Form::text('last_name',null,['class'=> 'form-control', 'placeholder' => 'Apellido', 'required']) !!}
-              </div>
-            </div>
             <div class="form-group">
-              {!! Form::label('id_card', 'Cedula') !!}
-              {!! Form::text('id_card',null,['class'=> 'form-control', 'placeholder' => 'Cedula', 'required']) !!}
-            </div>
-            <div class="form-group">
-                {!! Form::label('direction', 'Direccion') !!}
-                {!! Form::text('direction',null,['class'=> 'form-control', 'placeholder' => 'Direccion', 'required']) !!}
-            </div>
+              {!! Form::label('cedula', 'Cedula') !!}
+              {!! Form::text('cedula',null,['class'=> 'form-control', 'placeholder' => 'Cedula', 'required']) !!}
+            </div>  
             <div class="form-group">
               {!! Form::label('email', 'Correo Electronico') !!}
               {!! Form::email('email',null,['class'=> 'form-control', 'placeholder' => 'ejemplo@gmail.com', 'required']) !!}
             </div>
-            <div>
-              <div class="form-group col-md-6">
+              <div class="form-group">
                 {!! Form::label('password', 'Contraseña') !!}
                 {!! Form::password('password',['class'=> 'form-control', 'placeholder' => '***********', 'required']) !!}
               </div>
-              <div class="form-group col-md-6">
-                {!! Form::label('password2', 'Contraseña') !!}
-                {!! Form::password('password2',['class'=> 'form-control', 'placeholder' => '***********', 'required']) !!}
-              </div>
-            </div>
             <div class="form-group hidden ">
               {!! Form::label('type', 'Tipo') !!}
               {!! Form::select('type',['' => 'seleccione un nivel de usuario','cliente'=> 'Cliente', 'administrador' => 'Administrador', 'empleado' => 'empleado'],'cliente',['class' => 'form-control']) !!}

@@ -1,12 +1,12 @@
 $(function () {
-	$estado = $('#estado').html();
+	$estado = $('#estados').html();
 	if ($estado == "activo") {
-		$('#estado').addClass("label label-success");
+		$('#estados').addClass("label label-success");
 	}
 	else if ($estado == "inactivo") {
-		$('#estado').addClass("label label-danger");
+		$('#estados').addClass("label label-danger");
 	}else{
-		$('#estado').addClass("label label-default");
+		$('#estados').addClass("label label-default");
 	}
 	
 });

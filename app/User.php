@@ -14,8 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primarykey = 'cedula';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'cedula', 'email', 'password',
     ];
 
     /**
@@ -26,4 +28,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
