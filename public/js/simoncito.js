@@ -8,5 +8,4 @@ $(function () {
 	}else{
 		$('#estados').addClass("label label-default");
 	}
-	
 });
