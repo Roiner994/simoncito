@@ -20,8 +20,9 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
+        $i=Empleado::select('empleados')->count();
         $empleados= Empleado::select('empleados.estado','personas.*')->join('personas','personas.cedula','=','empleados.cedula')->paginate(5);
-        return view('empleados.index')->with('empleados',$empleados);
+        return view('empleados.index')->with('empleados',$empleados)->with('i',$i);
     }
 
     /**

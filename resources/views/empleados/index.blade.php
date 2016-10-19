@@ -27,6 +27,7 @@
           <th>Accion</th>
         </thead>
         <tbody>
+          <td id="cantidad" class="hidden">{{$i}}</td>
           @foreach($empleados as $empleado)
           <tr>
             <td>{{ $empleado->cedula }}</td>
@@ -34,7 +35,7 @@
             <td>{{ $empleado->apellido }}</td>
             <td>{{ $empleado->edad }}</td>
             <td>{{ $empleado->ocupacion}}</td>
-            <td><label id="estados">{{ $empleado->estado}}</label></td>
+            <td><label id="empleado{{$i-=1}}" class="numero">{{ $empleado->estado}}</label></td>
             <td>
               <a href="{{ route('administrador.empleado.detalle',$empleado->cedula )}}"  class="btn btn-primary glyphicon glyphicon-folder-open">
               </a>

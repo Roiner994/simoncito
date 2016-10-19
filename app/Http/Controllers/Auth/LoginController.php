@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 use App\User;
 use Validator;
+use App\Models\Empleado;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -53,6 +54,7 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
+        $empleado=User::select('users.*')->where('users.cedula','=',$request['email']);
         $this->validate($request, [
             'email' => 'required',
             'password' => 'required',
@@ -60,7 +62,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if ($this->auth->attempt($credentials, $request->has('remember')))
         {
-            return view("inicio");
+            return view("inicio")->with('empleado',$empleado);
         }
         Session::flash('error','El usuario o la contraseña son incorrectos');
         return view('usuarios.login'); 

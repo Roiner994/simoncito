@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Empleado;
 use App\Http\Requests;
 use App\User;
 use App\Models\Persona;
@@ -58,7 +58,8 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        $empleado= Empleado::select('empleados.estado', 'personas.*')->join('personas','personas.cedula','=','empleados.cedula')->where('empleados.cedula','=',$id)->firstOrFail();
+        return view('empleados.detalle')->with('empleado',$empleado);
     }
 
     /**

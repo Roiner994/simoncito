@@ -37,12 +37,12 @@
             {{-- inicio --}}
             <li><a href=#><i class="glyphicon glyphicon-home " aria-hidden="true"> </i> Inicio</a></li>
             
-            {{-- inventario --}}
+            {{-- Asistencias --}}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="text-warning fa fa-list-alt" aria-hidden="true"></i>  Inventario<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="text-warning fa fa-list-alt" aria-hidden="true"></i> Asistencias<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href=#>Categorias</a></li>
-                <li><a href=#>Productos</a></li>
+                <li><a href=#>Empleados</a></li>
+                <li><a href=#>Profesores</a></li>
               </ul>
             </li>
 
@@ -63,15 +63,16 @@
                 </ul>
             </li>
 
+            {{-- Reportes --}}
+            <li><a href=#><i class="text-danger fa fa-file-pdf-o" aria-hidden="true"> </i> Reportes</a></li>
 
-            <li><a href=#><i class="fa fa-truck " aria-hidden="true"> </i>    Proveedores</a></li>
-            <li><a href=#><i class="fa fa-shopping-cart " aria-hidden="true"> </i>    Cotizaciones</a></li>
           </ul>
+
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user text-primary" aria-hidden="true"></i> {{Auth::user()->email}}<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user text-primary" aria-hidden="true"></i> @if(Auth::user()){{Auth::user()->email}}@endif<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href=#>Detalle</a></li>
+                <li><a href=@if(Auth::user()){{ route('usuario.show',Auth::user()->cedula)}}@endif>Detalle</a></li>
                 <li><a href="{{ route('administrador.auth.logout')}}"><i class="text-danger fa fa-sign-out" aria-hidden="true"></i>Salir</a></li>
               </ul>
             </li>
