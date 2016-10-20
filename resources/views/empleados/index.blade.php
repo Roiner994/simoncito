@@ -12,7 +12,7 @@
      <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="{{ route('empleado.create') }}" class="btn btn-success navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"> Nuevo Usuario</a>
+          <a href="{{ route('empleado.create') }}" class="btn btn-success navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"> Nuevo Empleado</a>
         </div>
       <div class="panel-body">
 

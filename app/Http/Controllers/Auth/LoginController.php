@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 use Session;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -55,12 +56,9 @@ class LoginController extends Controller
     public function postLogin(Request $request)
     {
         $empleado=User::select('users.*')->where('users.cedula','=',$request['email']);
-        $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-        $credentials = $request->only('email', 'password');
-        if ($this->auth->attempt($credentials, $request->has('remember')))
+        
+        
+        if (Auth::attempt(['email'=>$request['email'],'password' => $request['password']]))
         {
             return view("inicio")->with('empleado',$empleado);
         }

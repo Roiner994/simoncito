@@ -10,6 +10,12 @@ use App\Models\Persona;
 
 class UsuarioController extends Controller
 {
+
+    public function menu()
+    {
+        return view('inicio');
+    }
+
     public function getLogin(Request $request)
     {
         dd('hola');

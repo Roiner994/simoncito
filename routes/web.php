@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/inicio', function () {
-    return view('inicio');
-});
+Route::get('inicio', [
+    'uses' => 'UsuarioController@menu',
+    'as' => 'administrador.inicio'
+]);
 
 Route::group(['prefix' => 'administrador'], function () {
 

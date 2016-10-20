@@ -13,10 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     {!!Html::style('css/bootstrap.min.css')!!}
-    {!!Html::style('css/bootstrap-social.css')!!}
-    {!!Html::style('css/navbar-fixed-top.css')!!}
     {!!Html::style('css/login.css')!!}
-    {!!Html::style('css/font-awesome.css')!!}
+    {!!Html::style('css/font-awesome.min.css')!!}
     {!!Html::script('js/bootstrap.min.js')!!}
 </head>
 <body>
