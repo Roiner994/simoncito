@@ -22,4 +22,15 @@ class Representante extends Model
     {       
         return $this->belongsTo(Persona::class);
     }
+
+    public function CargarRepresentante($cedula,$otros_niños,$dispuesto_colaborar,$parentesco_id)
+    {
+        $representante =[
+            'cedula' => $cedula,
+            'otros_niños' => $otros_niños,
+            'dispuesto_colaborar' => $dispuesto_colaborar,
+            'parentesco_id' => $parentesco_id
+        ];
+        return $representante;
+    }
 }

@@ -21,10 +21,16 @@ Route::group(['prefix' => 'administrador'], function () {
 
 	Route::get('empleado/detalle/{id?}', [
                 'uses' => 'EmpleadoController@detalle',
-                'as' => 'administrador.empleado.detalle'
+                'as' => 'empleado.detalle'
+                ]);
+    Route::get('representante/detalle/{id?}', [
+                'uses' => 'RepresentanteController@detalle',
+                'as' => 'representante.detalle'
                 ]);
     Route::resource('usuario','UsuarioController');
     Route::resource('empleado','EmpleadoController');
+    Route::resource('representante','RepresentanteController');
+    Route::resource('parentesco','ParentescoController');
 });
 
 Route::get('/', [

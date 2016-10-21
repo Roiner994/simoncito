@@ -52,15 +52,14 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="text-primary fa fa-users" aria-hidden="true"></i> Personas<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                 {{-- Empleados --}}
+                  <li><a href="{{ route('empleado.index')}}">Empleados</a></li>
                   <li class="dropdown-submenu">
-                  <a tabindex="-1" href="{{ route('empleado.index')}}">Empleados <i class="pull-right fa fa-caret-right" aria-hidden="true"></i></a>
+                  <a tabindex="-1" href="">Representantes<i class="pull-right fa fa-caret-right" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="#">Encargados</a></li>
-                      <li><a href="#">Suplentes</a></li>
+                      <li><a tabindex="-1" href="{{ route('representante.index')}}">Representantes</a></li>
+                      <li><a href="{{ route('parentesco.index')}}">Parentescos</a></li>
                     </ul>
                   </li>
-
-                  <li><a href=#>Representantes</a></li>
                   <li><a href=#>Estudiantes</a></li>
                 </ul>
             </li>

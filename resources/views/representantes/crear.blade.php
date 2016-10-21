@@ -1,14 +1,14 @@
 @extends ('plantillas.main')
-@section('title', 'Crear Empleado')
+@section('title', 'Crear Representante')
 
 @section ('content')
 	<br><br>
 	<div class="container">
 		<div class="col-me-8 col-md-offset-2">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Registrar Empleado</div>
+				<div class="panel-heading">Registrar Representante</div>
 				<div class="panel-body">
-					{!! Form::open(['route' => 'empleado.store', 'method' => 'POST' , 'class' => 'form_inverse']) !!}
+					{!! Form::open(['route' => 'representante.store', 'method' => 'POST' , 'class' => 'form_inverse']) !!}
 						<div class="form-group">
 							{!! Form::label('cedula', 'Cedula') !!}
 							{!! Form::text('cedula',null,['class'=> 'form-control', 'placeholder' => 'Cedula', 'required']) !!}
@@ -50,11 +50,21 @@
 							{!! Form::text('direccion',null,['class'=> 'form-control', 'placeholder' => 'Direccion', 'required']) !!}
 						</div>
 						<div class="form-group">
-							{!! Form::label('estado', 'Estado') !!}
-							{!! Form::select('estado',['' => 'seleccione el estado del empleado','activo'=> 'Activo', 'inactivo' => 'inactivo'],null,['class' => 'form-control']) !!}
+							{!! Form::label('parentesco_id', 'Parentesco') !!}
+							{!! Form::select('parentesco_id',$parentescos,null,['id'=>'parentesco_id','class'=>'form-control']) !!}
 						</div>
 						<div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+							{!! Form::label('otros_niños', '¿Tiene otros niños inscritos en esta institucion?') !!}
+         					 <input type="radio" name="otros_niños" value="si" required> Si <i class="fa fa-check" aria-hidden="true"></i>
+          					<input type="radio" name="otros_niños" value="no" required> No <i class="fa fa-times" aria-hidden="true"></i>
+        				</div>
+        				<div class="form-group">
+							{!! Form::label('otros_niños', '¿Esta dispuesto a colaborar?') !!}
+         					 <input type="radio" name="dispuesto_colaborar" value="si" required> Si <i class="fa fa-check" aria-hidden="true"></i>
+          					<input type="radio" name="dispuesto_colaborar" value="no" required> No <i class="fa fa-times" aria-hidden="true"></i>
+        				</div>				
+						<div class="form-group">
+                            <div class="col-md-6 col-m	d-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="glyphicon glyphicon-user"></i> Registrar
                                 </button>

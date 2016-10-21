@@ -43,18 +43,9 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        Persona::create([
-                    'cedula' => $request ['cedula'],
-                    'nombre' => $request ['nombre'],
-                    'segundo_nombre' => $request ['segundo_nombre'],
-                    'apellido' => $request ['apellido'],
-                    'segundo_apellido' => $request ['segundo_apellido'],
-                    'lugar_nacimiento' => $request ['lugar_nacimiento'],
-                    'fecha_nacimiento' => $request ['fecha_nacimiento'],
-                    'edad' => $request['edad'],
-                    'ocupacion' => $request['ocupacion'],
-                    'direccion' => $request['direccion']
-        ]);
+        $input_persona = new Persona();
+        $input_persona = $input_persona->cargarPersona($request['cedula'],$request['nombre'],$request['segundo_nombre'],$request['apellido'],$request['segundo_apellido'],$request['lugar_nacimiento'],$request['fecha_nacimiento'],$request['edad'],$request['ocupacion'],$request['direccion']);
+        Persona::create($input_persona);
 
         Empleado::create([
             'cedula' => $request ['cedula'],

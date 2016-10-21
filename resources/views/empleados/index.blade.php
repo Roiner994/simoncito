@@ -27,7 +27,6 @@
           <th>Accion</th>
         </thead>
         <tbody>
-          <td id="cantidad" class="hidden">{{$i}}</td>
           @foreach($empleados as $empleado)
           <tr>
             <td>{{ $empleado->cedula }}</td>
